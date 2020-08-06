@@ -1,0 +1,595 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  overflow: hidden;
+}
+body {
+  background: #ec5033;
+  font-family: "gtaRegular", sans-serif;
+  pointer-events: none;
+  transition: background 1s ease;
+}
+/* ****************** FONTS **********************  */
+@font-face {
+  src: url(fonts/gta-medium.woff2);
+  font-family: gtaMedium;
+}
+@font-face {
+  src: url(fonts/gta-regular-italic.woff2);
+  font-family: gtaItalic;
+}
+@font-face {
+  src: url(fonts/gta-regular.woff2);
+  font-family: gtaRegular;
+}
+/* ****************** FONTS **********************  */
+/* ****************** NAVBAR **********************  */
+header {
+  position: relative;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 90%;
+}
+.header-title {
+  font-size: 11px;
+}
+
+.header-title-navBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 0px;
+}
+.header-title-name,
+.header-title-works {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.header-title-works {
+  text-decoration: underline;
+}
+.border {
+  background: #111;
+  width: 1%;
+  height: 1px;
+}
+.hero-image {
+  background-color: rgb(236, 80, 51);
+  filter: brightness(1.5);
+  opacity: 60%;
+}
+
+/* ****************** NAVBAR ********************** */ /* ****************** CONTENTS ********************** */
+.section-content {
+  position: relative;
+  padding: 5% 0px;
+  height: 80%;
+}
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 60vw;
+  opacity: 0;
+}
+.section-content-heading {
+  color: #ffffff;
+  font-size: 1em;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  line-height: 1.4;
+  letter-spacing: 3px;
+  max-width: 90%;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.social-links {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 2%;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.links {
+  display: flex;
+  font-size: 10px;
+}
+.links p {
+  padding: 0px 3%;
+}
+.scroll-btn {
+  font-size: 10px;
+  border: 1px solid #111;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (min-width: 577px) {
+  .section-content-heading {
+    font-size: 2.6em;
+    top: 10%;
+    letter-spacing: 0px;
+    width: 100%;
+    line-height: 1;
+  }
+  .hero-image {
+    top: 5%;
+    width: 36vw;
+  }
+  .social-links {
+    bottom: 0;
+  }
+  .section-content {
+    height: 100%;
+  }
+  header {
+    padding: 10px 3%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+  header {
+    height: 140%;
+  }
+  .section-content-heading {
+    font-size: 1.2em;
+    font-family: "gtaRegular", sans-serif;
+    top: 0;
+  }
+  .hero-image {
+    max-width: 30vw;
+  }
+}
+@media (min-width: 600px) and (orientation: landscape) {
+  header {
+    height: 100%;
+  }
+  .section-content-heading {
+    top: 10%;
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  header {
+    height: 130%;
+  }
+  .section-content-heading {
+    font-size: 2.3em;
+    top: 10%;
+  }
+  .hero-image {
+    max-width: 30vw;
+  }
+}
+@media (min-width: 653px) and (orientation: landscape) {
+  header {
+    height: 150%;
+  }
+  .section-content-heading {
+    top: 10%;
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 666px) {
+  header {
+    height: 100%;
+  }
+}
+@media (min-width: 675px) {
+  header {
+    height: 100%;
+  }
+  .section-content-heading {
+    font-size: 2.3em;
+    top: 10%;
+  }
+}
+@media (min-width: 736px) and (orientation: landscape) {
+  header {
+    height: 110%;
+  }
+}
+@media (min-width: 769px) and (orientation: landscape) {
+  header {
+    height: 100%;
+  }
+}
+
+@media (min-width: 812px) and (orientation: landscape) {
+  header {
+    height: 100%;
+  }
+}
+
+@media (min-width: 995px) {
+  header {
+    height: 100%;
+  }
+  .section-content-heading {
+    font-size: 3em;
+    top: 15%;
+  }
+  .hero-image {
+    width: 27vw;
+    right: 3%;
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    padding: 10px 10%;
+    height: 110%;
+  }
+  .section-content-heading {
+    font-size: 4vw;
+  }
+  .links,
+  .scroll-btn {
+    font-size: 1vw;
+  }
+  .scroll-btn {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ****************** CONTENTS ********************** */ /* ****************** LOADER ********************** */
+.loader {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.top-bg,
+.bottom-bg {
+  height: 50%;
+  width: 100%;
+  background: #111;
+  position: absolute;
+}
+.top-bg {
+  top: 0;
+  left: 0;
+}
+.bottom-bg {
+  bottom: 0;
+  left: 0;
+}
+.text {
+  font-family: "gtaRegular", sans-serif;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  animation: textAnimation 1s ease forwards 0.8s;
+  font-size: 10px;
+}
+@media (min-width: 400px) {
+  .text {
+    font-size: 2vw;
+  }
+}
+@keyframes topBgAnimation {
+  from {
+    top: 0;
+  }
+  to {
+    top: -50%;
+  }
+}
+@keyframes bottomBgAnimation {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -50%;
+  }
+}
+@keyframes textAnimation {
+  from {
+    top: 48%;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    top: 52%;
+    opacity: 0;
+    transform: translate(-50%, -52%);
+  }
+}
+@keyframes heroImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 60%;
+  }
+}
+@keyframes border {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes titleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes contentHeading {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ****************** LOADER **********************  */
+main {
+  padding: 0px 5%;
+  height: 70%;
+  font-family: "gtaRegular", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 95%;
+}
+.main-content {
+  position: relative;
+}
+.main-border {
+  background: #111;
+  width: 100%;
+  height: 1px;
+  margin: 5px 0px;
+}
+.main-p {
+  font-size: 10px;
+  padding: 5px 0px;
+}
+.main-links {
+  font-size: 12px;
+  padding: 10px 0px;
+}
+@media (min-width: 568px) and (orientation: landscape) {
+  main {
+    height: 130%;
+  }
+}
+@media (min-width: 581px) {
+  main {
+    height: 80%;
+  }
+  .main-links {
+    font-size: 20px;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  main {
+    height: 120%;
+  }
+}
+@media (min-width: 667px) and (orientation: landscape) {
+  main {
+    height: 80%;
+  }
+}
+
+@media (min-width: 997px) {
+  .main-links {
+    font-size: 30px;
+  }
+  main {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-links {
+    font-size: 3vw;
+    padding: 50px 0px;
+  }
+  main {
+    height: 170%;
+  }
+}
+@media (min-width: 1500px) {
+  main {
+    height: 180%;
+  }
+}
+@media (min-width: 1700px) {
+  main {
+    height: 150%;
+  }
+}
+@media (min-width: 1000px) {
+  @keyframes textInfinite {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .animate {
+    animation: textInfinite 30s linear infinite;
+  }
+}
+/* ******************************************* */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 5%;
+  font-family: "gtaMedium", sans-serif;
+  width: 90%;
+}
+.about-p {
+  color: #fff;
+  font-size: 14px;
+  padding: 30px 0px;
+}
+
+.about-content {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.usually-do {
+  padding: 20px 0px;
+}
+.usually-do-header,
+.contact-and-social-header {
+  font-size: 12px;
+  font-family: "gtaItalic", sans-serif;
+}
+.usually-do-content {
+  font-size: 14px;
+}
+.contact-and-social-links {
+  display: flex;
+  font-size: 14px;
+  padding: 10px 0px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.contact-and-social-links p:hover {
+  color: #fff;
+}
+
+@media (min-width: 400px) {
+  section {
+    max-width: 60%;
+  }
+}
+@media (min-width: 582px) {
+  section {
+    max-width: 100%;
+    padding: 30px 5%;
+  }
+  .about-p,
+  .about-content {
+    font-size: 2em;
+  }
+  .usually-do {
+    padding: 40px 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-p,
+  .about-content {
+    font-size: 3vw;
+  }
+  .usually-do-header,
+  .contact-and-social-header {
+    font-size: 1.5vw;
+  }
+  .contact-and-social-links {
+    font-size: 2vw;
+  }
+}
+/* ************************************************************ */
+.another-section {
+  font-family: "gtaMedium", sans-serif;
+  padding: 80px 5%;
+}
+.recognition-header {
+  color: #fff;
+  font-size: 14px;
+}
+.awwwards {
+  padding: 15px 0px;
+}
+.awwards-title {
+  font-family: "gtaItalic", sans-serif;
+  font-size: 12px;
+}
+
+.awwards-content {
+  font-size: 14px;
+}
+@media (min-width: 585px) {
+  .awwards-content,
+  .recognition-header {
+    font-size: 2em;
+  }
+}
+@media (min-width: 885px) {
+  .awwards-content,
+  .recognition-header {
+    font-size: 2.5em;
+  }
+}
+
+/* ********************************************** */
+.footer-border {
+  height: 1px;
+  width: 100%;
+  background-color: #111;
+}
+footer {
+  padding: 30px 5%;
+}
+.footer-container {
+  font-size: 10px;
+}
+
+@media (min-width: 1148px) {
+  .awwards-title {
+    font-size: 2vw;
+  }
+  .awwards-content,
+  .recognition-header {
+    font-size: 3vw;
+  }
+  .footer-container {
+    font-size: 1vw;
+  }
+}
+
+.mouseCursorImage {
+  width: 40vw;
+  height: 40vh;
+  background-image: url("images/manYellow.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 1;
+  transform-origin: 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
