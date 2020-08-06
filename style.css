@@ -63,7 +63,12 @@ header {
   filter: brightness(1.5);
   opacity: 60%;
 }
-
+@media (min-width: 800px) {
+  .header-title-name,
+  .header-title-works {
+    font-size: 1.2vw;
+  }
+}
 /* ****************** NAVBAR ********************** */ /* ****************** CONTENTS ********************** */
 .section-content {
   position: relative;
